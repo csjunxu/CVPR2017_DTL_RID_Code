@@ -9,8 +9,8 @@ im_dir  = dir(fpath);
 im_num = length(im_dir);
 
 %% load parameters and dictionary
-load Data/params_Gray.mat par param;
-load Data/DSCDL_BID_Dict_ADPU_backup_nup0_20160927T212718.mat Dict;
+load Data/params_20160928T180850.mat par param;
+load Data/DTL_RID_Dict_backup_nup0_20160929T190403.mat Dict;
 load Data/EMGM_8x8_100_knnNI2BS500Train_20160722T082406.mat;
 par.cls_num = 100;
 par.nInnerLoop = 3;
@@ -62,7 +62,7 @@ for i = 1 : im_num
             Continue = true;
             while Continue
                 fprintf('Iter: %d \n', nOuterLoop);
-                IMout_part_y = bscdl_BID_full(IMin_part_y,model,Dict,par,param);
+                IMout_part_y = DTL_ADPU_BID_full(IMin_part_y,model,Dict,par,param);
                 % Noise Level Estimation
                 nSig = NoiseLevel(IMout_part_y*255);
                 fprintf('The noise level is %2.4f.\n',nSig);
