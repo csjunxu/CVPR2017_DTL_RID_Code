@@ -61,8 +61,6 @@ for t = 1 : par.nInnerLoop
         Y = [Xc; par.sqrtmu * Un * full(Alphan)];
         Alphac = full(mexLasso(Y, D3,param));
         clear Y D3;
-        %             %% ICCV2013 MML case
-        %             Alphac = Uc \ Un * Alphan;
         %% Reconstruction
         Xc = D * Alphac;
         XC(:, idx_cluster) = Xc;
