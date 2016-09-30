@@ -61,8 +61,8 @@ for i = 1 : im_num
     else
         IMout_ycbcr = zeros(size(IMin));
         IMout_ycbcr(:, :, 1) = IMout_y;
-        IMout_ycbcr(:, :, 2) = IMin_part_cb;
-        IMout_ycbcr(:, :, 3) = IMin_part_cr;
+        IMout_ycbcr(:, :, 2) = IMin_cb;
+        IMout_ycbcr(:, :, 3) = IMin_cr;
         IMout = ycbcr2rgb(IMout_ycbcr);
     end
     %% output
